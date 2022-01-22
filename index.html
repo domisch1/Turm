@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js"></script>
+    <title>Turm</title>
+  </head>
+  <body>
+    <section id="main">
+      <div id="caption-container">
+        <h1 id="caption">Turm</h1>
+        <span id="subcaption">Reihenzahl</span>
+        <div id="counter-container">
+          <svg height="20" width="20">
+            <polygon points="0,10 20,0 20,20" class="trigger" id="left" />
+          </svg>
+          <span id="counter">3</span>
+          <svg height="20" width="20">
+            <polygon points="0,0 20,10 0,20" class="trigger" id="right" />
+          </svg>
+        </div>
+      </div>
+      <section id="cards">
+        <div class="line">
+          <div class="card" id="last-card"></div>
+        </div>
+        <div class="line">
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+        <div class="line">
+          <div class="card"></div>
+          <div class="card"></div>
+          <div class="card"></div>
+        </div>
+      </section>
+      <button id="play">Play</button>
+    </section>
+  </body>
+</html>
