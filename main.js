@@ -10,7 +10,7 @@ function init() {
 function lessLines() {
   let counter = document.getElementById("counter");
   let value = parseInt(counter.textContent);
-  if (value > 2) {
+  if (value > 3) {
     value--;
     counter.textContent = value;
     deleteCardLine();
@@ -49,16 +49,8 @@ function deleteCardLine() {
   container.removeChild(line[value]);
 }
 
-function renderCard() {
-  let counter = document.getElementById("counter");
-  let value = parseInt(counter.textContent);
-  console.log(value);
-}
-
 function turnCard(e) {
-  let cards = document.getElementsByClassName("card");
   let caption = document.getElementById("caption-container");
-  let headline = document.getElementById("caption");
   let play = document.getElementById("play");
   let card = e.target;
   if (card.getAttribute("class") === "card red") {
@@ -88,10 +80,12 @@ function startGame() {
   let blackJoker = 2;
   let redJoker = 2;
   let cards = document.getElementsByClassName("card");
+  // RESET FOR NEW GAME
   for (let j = 0; j < cards.length; j++) {
     cards[j].textContent = "";
     cards[j].classList.remove("black", "red", "black-bg", "red-bg", "joker");
   }
+  // ADD CLASSES FOR NEW GAME
   for (let i = 0; i < cards.length; i++) {
     cards[i].addEventListener("click", turnCard);
     let randomNumber = Math.random();
@@ -115,12 +109,6 @@ function startGame() {
     } else if (red === 0 && black > 0) {
       console.log("black for red");
       cards[i].classList.add("black");
-    }
-    if (red === 0) {
-      console.log("red empty");
-    }
-    if (black === 0) {
-      console.log("black empty");
     }
   }
 }
