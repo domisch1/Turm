@@ -52,7 +52,9 @@ function deleteCardLine() {
 function turnCard(e) {
   let caption = document.getElementById("caption-container");
   let play = document.getElementById("play");
+  let cards = document.getElementsByClassName("card-hidden");
   let card = e.target;
+  card.classList.remove("card-hidden");
   if (card.getAttribute("class") === "card red") {
     card.classList.add("red-bg");
   } else if (card.getAttribute("class") === "card black") {
@@ -64,7 +66,7 @@ function turnCard(e) {
     card.classList.add("black-bg");
     card.textContent = "J";
   }
-  if (card.getAttribute("id") === "last-card") {
+  if (cards.length === 0) {
     caption.classList.remove("hidden");
     play.classList.remove("hidden");
   }
@@ -84,6 +86,7 @@ function startGame() {
   for (let j = 0; j < cards.length; j++) {
     cards[j].textContent = "";
     cards[j].classList.remove("black", "red", "black-bg", "red-bg", "joker");
+    cards[j].classList.add("card-hidden");
   }
   // ADD CLASSES FOR NEW GAME
   for (let i = 0; i < cards.length; i++) {
